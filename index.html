@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Markmap</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+      }
+      #mindmap {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+      .markmap-node text {
+        font-size: 16px;
+        fill: #333;
+      }
+      .markmap-line {
+        stroke: #007acc;
+        stroke-width: 2px;
+      }
+      .markmap-node {
+        color: #007acc;
+      }
+      .markmap-node.depth-0 text {
+        font-size: 22px;
+        font-weight: bold;
+        fill: #d9534f;
+      }
+      .markmap-node.depth-1 text {
+        font-size: 20px;
+        font-weight: bold;
+        fill: #5bc0de;
+      }
+      .markmap-node.depth-2 text {
+        font-size: 18px;
+        fill: #5cb85c;
+      }
+      .markmap-node.depth-3 text {
+        font-size: 16px;
+        fill: #f0ad4e;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/style.css"
+    />
+  </head>
+  <body>
+    <svg id="mindmap"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.0/dist/browser/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/index.js"></script>
+    <script>
+      (() => {
+        setTimeout(() => {
+          const { markmap: q, mm: v } = window,
+            j = new q.Toolbar();
+          j.attach(v);
+          const we = j.render();
+          we.setAttribute("style", "position:absolute;bottom:20px;right:20px"),
+            document.body.append(we);
+        });
+      })();
+    </script>
+    <script>
+      ((f, d, h, u) => {
+        const g = f();
+        window.mm = g.Markmap.create(
+          "svg#mindmap",
+          (d || g.deriveOptions)(u),
+          h
+        );
+      })(
+        () => window.markmap,
+        null,
+        {
+          content: "",
+          children: [
+            {
+              content: "Metodología General Ajustada (MGA)",
+              children: [
+                {
+                  content: "Definición",
+                  children: [
+                    {
+                      content:
+                        "Método estandarizado para formular proyectos de inversión pública",
+                      children: [],
+                      payload: { lines: "3,5" },
+                    },
+                  ],
+                  payload: { lines: "2,3" },
+                },
+                {
+                  content: "Importancia",
+                  children: [
+                    {
+                      content:
+                        "Facilita la toma de decisiones y la gestión de proyectos de inversión pública",
+                      children: [],
+                      payload: { lines: "6,8" },
+                    },
+                  ],
+                  payload: { lines: "5,6" },
+                },
+                {
+                  content: "Aplicación",
+                  children: [
+                    {
+                      content:
+                        "Utilizada para registrar cualquier proyecto de inversión pública",
+                      children: [],
+                      payload: { lines: "9,10" },
+                    },
+                    {
+                      content: "Independiente de la fase o sector",
+                      children: [],
+                      payload: { lines: "10,12" },
+                    },
+                  ],
+                  payload: { lines: "8,9" },
+                },
+                {
+                  content: "Herramienta",
+                  children: [
+                    {
+                      content:
+                        'Plataforma informática: <a href="https://mgaweb.dnp.gov.co">MGA Web</a>',
+                      children: [],
+                      payload: { lines: "13,15" },
+                    },
+                  ],
+                  payload: { lines: "12,13" },
+                },
+              ],
+              payload: { lines: "0,1" },
+            },
+            {
+              content: "Ciclo de Vida del Proyecto",
+              children: [
+                {
+                  content: "Preinversión",
+                  children: [
+                    {
+                      content: "Fase I: Perfil",
+                      children: [],
+                      payload: { lines: "18,19" },
+                    },
+                    {
+                      content: "Fase II: Prefactibilidad",
+                      children: [],
+                      payload: { lines: "19,20" },
+                    },
+                    {
+                      content: "Fase III: Factibilidad",
+                      children: [],
+                      payload: { lines: "20,22" },
+                    },
+                  ],
+                  payload: { lines: "17,18" },
+                },
+                {
+                  content: "Inversión",
+                  children: [
+                    {
+                      content: "Ejecución del proyecto",
+                      children: [],
+                      payload: { lines: "23,25" },
+                    },
+                  ],
+                  payload: { lines: "22,23" },
+                },
+                {
+                  content: "Operación",
+                  children: [
+                    {
+                      content:
+                        "Mantenimiento y seguimiento de los beneficios del proyecto",
+                      children: [],
+                      payload: { lines: "26,28" },
+                    },
+                  ],
+                  payload: { lines: "25,26" },
+                },
+              ],
+              payload: { lines: "15,16" },
+            },
+            {
+              content: "Identificación del Problema",
+              children: [
+                {
+                  content: "Definición del Problema Central",
+                  children: [
+                    {
+                      content: "Punto de partida del proyecto",
+                      children: [],
+                      payload: { lines: "31,33" },
+                    },
+                  ],
+                  payload: { lines: "30,31" },
+                },
+                {
+                  content: "Árbol de Problemas",
+                  children: [
+                    {
+                      content: "Causas: Factores que generan el problema",
+                      children: [],
+                      payload: { lines: "34,35" },
+                    },
+                    {
+                      content: "Efectos: Consecuencias del problema",
+                      children: [],
+                      payload: { lines: "35,37" },
+                    },
+                  ],
+                  payload: { lines: "33,34" },
+                },
+                {
+                  content: "Consistencia Lógica",
+                  children: [
+                    {
+                      content: "Verificación de la relación causa-efecto",
+                      children: [],
+                      payload: { lines: "38,40" },
+                    },
+                  ],
+                  payload: { lines: "37,38" },
+                },
+              ],
+              payload: { lines: "28,29" },
+            },
+            {
+              content: "Análisis de Participantes",
+              children: [
+                {
+                  content: "Identificación de Participantes",
+                  children: [
+                    {
+                      content: "Beneficiarios",
+                      children: [],
+                      payload: { lines: "43,44" },
+                    },
+                    {
+                      content: "Cooperantes",
+                      children: [],
+                      payload: { lines: "44,45" },
+                    },
+                    {
+                      content: "Oponentes",
+                      children: [],
+                      payload: { lines: "45,46" },
+                    },
+                    {
+                      content: "Perjudicados",
+                      children: [],
+                      payload: { lines: "46,48" },
+                    },
+                  ],
+                  payload: { lines: "42,43" },
+                },
+                {
+                  content: "Registro y Análisis",
+                  children: [
+                    {
+                      content: "Documentación de roles y expectativas",
+                      children: [],
+                      payload: { lines: "49,51" },
+                    },
+                  ],
+                  payload: { lines: "48,49" },
+                },
+              ],
+              payload: { lines: "40,41" },
+            },
+            {
+              content: "Alternativas de Solución",
+              children: [
+                {
+                  content: "Definición de Acciones Estratégicas",
+                  children: [
+                    {
+                      content: "Propuestas para alcanzar los objetivos",
+                      children: [],
+                      payload: { lines: "54,56" },
+                    },
+                  ],
+                  payload: { lines: "53,54" },
+                },
+                {
+                  content: "Eliminación de Acciones No Viables",
+                  children: [
+                    {
+                      content: "Filtrado de opciones",
+                      children: [],
+                      payload: { lines: "57,59" },
+                    },
+                  ],
+                  payload: { lines: "56,57" },
+                },
+                {
+                  content: "Configuración de Alternativas",
+                  children: [
+                    {
+                      content: "Combinación y evaluación de opciones",
+                      children: [],
+                      payload: { lines: "60,62" },
+                    },
+                  ],
+                  payload: { lines: "59,60" },
+                },
+              ],
+              payload: { lines: "51,52" },
+            },
+            {
+              content: "Evaluación",
+              children: [
+                {
+                  content: "Rentabilidad Económica y Social",
+                  children: [
+                    {
+                      content: "Análisis de la viabilidad",
+                      children: [],
+                      payload: { lines: "65,67" },
+                    },
+                  ],
+                  payload: { lines: "64,65" },
+                },
+                {
+                  content: "Decisión Final",
+                  children: [
+                    {
+                      content: "Selección de la mejor alternativa",
+                      children: [],
+                      payload: { lines: "68,69" },
+                    },
+                  ],
+                  payload: { lines: "67,68" },
+                },
+              ],
+              payload: { lines: "62,63" },
+            },
+          ],
+        },
+        null
+      );
+    </script>
+  </body>
+</html>
