@@ -1,0 +1,2 @@
+# MGA
+Metodología General Ajustada
